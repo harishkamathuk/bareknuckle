@@ -6,7 +6,7 @@ GitHub repository to explore all the features of github and integration with oth
 
 ---
 
-Issues Overview
+## Issues Overview
 
 [![Stories in Backlog](https://badge.waffle.io/harishkamathuk/bareknuckle.svg?label=backlog&title=Backlog)](http://waffle.io/harishkamathuk/bareknuckle)
 
@@ -14,5 +14,7 @@ Issues Overview
 
 
 ---
+
+## Build status
 
 [![Build status with Travis-CI](https://travis-ci.org/harishkamathuk/bareknuckle.svg?branch=master)](https://travis-ci.org/harishkamathuk/bareknuckle)
