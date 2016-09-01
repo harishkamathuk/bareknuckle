@@ -1,67 +1,41 @@
 <?php
-// Filename: /module/Blog/src/Blog/Service/PostService.php
-namespace Blog\Service;
+ // Filename: /module/Blog/src/Blog/Service/PostService.php
+ namespace Blog\Service;
 
-use Blog\Model\Post;
+ use Blog\Mapper\PostMapperInterface;
 
-class PostService implements PostServiceInterface
-{
-    protected $data = array(
-        array(
-            'id'    => 1,
-            'title' => 'Hello World #1',
-            'text'  => 'This is our first blog post!'
-        ),
-        array(
-            'id'     => 2,
-            'title' => 'Hello World #2',
-            'text'  => 'This is our second blog post!'
-        ),
-        array(
-            'id'     => 3,
-            'title' => 'Hello World #3',
-            'text'  => 'This is our third blog post!'
-        ),
-        array(
-            'id'     => 4,
-            'title' => 'Hello World #4',
-            'text'  => 'This is our fourth blog post!'
-        ),
-        array(
-            'id'     => 5,
-            'title' => 'Hello World #5',
-            'text'  => 'This is our fifth blog post!'
-        )
-    );
+ class PostService implements PostServiceInterface
+ {
+     /**
+      * @var \Blog\Mapper\PostMapperInterface
+      */
+     protected $postMapper;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function findAllPosts()
-    {
-        $allPosts = array();
+     /**
+      * @param 
+      * 
+      * PostMapperInterface $postMapper
+      */
+     public function __construct(PostMapperInterface $postMapper)
+     {
+         $this->postMapper = $postMapper;
+     }
 
-        foreach ($this->data as $index => $post) {
-            $allPosts[] = $this->findPost($index);
-        }
+     /**
+      * {@inheritDoc}
+      */
+     public function findAllPosts()
+     {
+        return $this->postMapper->findAll();    
+     }
 
-        return $allPosts;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function findPost($id)
-    {
-        $postData = $this->data[$id];
-
-        $model = new Post();
-        $model->setId($postData['id']);
-        $model->setTitle($postData['title']);
-        $model->setText($postData['text']);
-
-        return $model;
-    }
-}
+     /**
+      * {@inheritDoc}
+      */
+     public function findPost($id)
+     {
+         return $this->postMapper->find($id);
+     }
+ }
 
 ?>
