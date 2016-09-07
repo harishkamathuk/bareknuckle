@@ -98,4 +98,8 @@ class Bootstrap
 Bootstrap::init();
 Bootstrap::chroot();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 75fc51db15cb64122452e54744067f49110b971b
 ?>

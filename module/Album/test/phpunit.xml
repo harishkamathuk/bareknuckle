@@ -2,7 +2,11 @@
 
 <phpunit bootstrap="Bootstrap.php" colors="true">
     <testsuites>
+<<<<<<< HEAD
         <testsuite name="bareknuckle-test">
+=======
+        <testsuite name="zftutorial">
+>>>>>>> 75fc51db15cb64122452e54744067f49110b971b
             <directory>./AlbumTest</directory>
         </testsuite>
     </testsuites>
